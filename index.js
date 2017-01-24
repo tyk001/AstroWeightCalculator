@@ -13,29 +13,28 @@ var planets = [
 ];
 
 function clickHandler() {
-  var myWeightValue = document.getElementById("myWeight").value;
-  var dd = document.getElementById("pListing");
-  var enteredPlanet = dd.options[dd.selectedIndex].text;
-  findPlanet(enteredPlanet, myWeightValue)
+    var myWeightValue = document.getElementById("myWeight").value;
+    var dd = document.getElementById("pListing");
+    var enteredPlanet = dd.options[dd.selectedIndex].text;
+    findPlanet(enteredPlanet, myWeightValue)
 }
 
 function findPlanet(enteredPlanet, myWeightValue) {
-  for (var j = 0; j < planets.length; j++){
-      if (planets[j].planet == enteredPlanet) {
-          var planetsGravity = planets[j].gravity;
-      } else {
-      }
-  }
-  doCalc(planetsGravity, myWeightValue, enteredPlanet);
+    for (var j = 0; j < planets.length; j++) {
+        if (planets[j].planet == enteredPlanet) {
+            var planetsGravity = planets[j].gravity;
+        } else {}
+    }
+    doCalc(planetsGravity, myWeightValue, enteredPlanet);
 }
 
 function doCalc(planetsGravity, myWeightValue, enteredPlanet) {
-  var answer = Math.round(planetsGravity * myWeightValue);
-  displayCalc(answer, enteredPlanet);
+    var answer = Math.round(planetsGravity * myWeightValue);
+    displayCalc(answer, enteredPlanet);
 }
 
 function displayCalc(answer, enteredPlanet) {
-  var newdiv = document.createElement("div");
-  newdiv.appendChild(document.createTextNode("If you were on " + enteredPlanet + ", you would weigh " + answer +"lbs!"));
-  document.body.appendChild(newdiv);
+    var newdiv = document.createElement("div");
+    newdiv.appendChild(document.createTextNode("If you were on " + enteredPlanet + ", you would weigh " + answer + "lbs!"));
+    document.body.appendChild(newdiv);
 }
