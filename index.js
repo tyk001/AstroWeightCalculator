@@ -33,8 +33,15 @@ function doCalc(planetsGravity, myWeightValue, enteredPlanet) {
     displayCalc(answer, enteredPlanet);
 }
 
+
 function displayCalc(answer, enteredPlanet) {
     var newdiv = document.createElement("div");
     newdiv.appendChild(document.createTextNode("If you were on " + enteredPlanet + ", you would weigh " + answer + "lbs!"));
     document.body.appendChild(newdiv);
 }
+
+
+/**
+ * <div class="alert alert-success">
+ *
+ */
