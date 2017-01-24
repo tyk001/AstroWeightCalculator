@@ -26,16 +26,16 @@ function findPlanet(enteredPlanet, myWeightValue) {
       } else {
       }
   }
-  doCalc(planetsGravity, myWeightValue);
+  doCalc(planetsGravity, myWeightValue, enteredPlanet);
 }
 
-function doCalc(planetsGravity, myWeightValue) {
-  var answer = planetsGravity * myWeightValue;
-  displayCalc(answer);
+function doCalc(planetsGravity, myWeightValue, enteredPlanet) {
+  var answer = Math.round(planetsGravity * myWeightValue);
+  displayCalc(answer, enteredPlanet);
 }
 
-function displayCalc(answer) {
+function displayCalc(answer, enteredPlanet) {
   var newdiv = document.createElement("div");
-  newdiv.appendChild(document.createTextNode("Your weight on this planet would be" + answer));
+  newdiv.appendChild(document.createTextNode("If you were on " + enteredPlanet + ", you would weigh " + answer +"lbs!"));
   document.body.appendChild(newdiv);
 }
